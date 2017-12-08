@@ -10,7 +10,7 @@ Runs jrnl in a docker container. Stores journal and config locally, such as in y
 
 If you've never used jrnl before, do
 
-`docker run -it --rm -v [path_where_you want_to_store_your_journal_and_config]:/jrnlfiles jrnl`
+`docker run -it --rm -v [path_where_you want_to_store_your_journal_and_config]:/jrnlfiles garyritchie/docker-jrnl`
 
 And answer the questions.
 
@@ -24,7 +24,8 @@ For daily use you might want to place a script that will launch docker and run j
 @echo off
 setlocal
 
-docker run -it --rm -v %~dp0jrnlfiles:/jrnlfiles jrnl
+docker run -it --rm -v %~dp0:/jrnlfiles garyritchie/docker-jrnl
 
 endlocal
+pause
 ```
